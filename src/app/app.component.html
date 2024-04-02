@@ -6,6 +6,33 @@
     <title>Document</title>
 </head>
 <body>
-    <button (click)="sendMessage()">Click</button>
+
+            <div class="pl-5">
+                <div class="space-y-3">
+                <p class="text-2xl">Mano derecha</p>
+                <div class="space-x-5 pl-5">
+                    <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" (click)="sendMessage('1')">Pulgar</button>
+                    <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" (click)="sendMessage('2')">Indice</button>
+                    <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" (click)="sendMessage('3')">Medio</button>
+                    <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" (click)="sendMessage('4')">Anular</button>
+                    <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" (click)="sendMessage('5')">Meñique</button>
+                </div>
+        
+                
+                <p class="text-2xl">Mano derecha</p>
+                <div class="space-x-5 pl-5">
+                    <button class="bg-rose-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" (click)="sendMessage('6')">Pulgar</button>
+                    <button class="bg-rose-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" (click)="sendMessage('7')">Indice</button>
+                    <button class="bg-rose-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" (click)="sendMessage('8')">Medio</button>
+                    <button class="bg-rose-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" (click)="sendMessage('9')">Anular</button>
+                    <button class="bg-rose-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" (click)="sendMessage('10')">Meñique</button>
+                </div>
+                </div>
+            </div>
+
+
+    <div class="pl-5 pt-10">
+        <img src='data:image/jpeg;base64, {{imageBase64}}' alt="">
+    </div>
 </body>
 </html>
