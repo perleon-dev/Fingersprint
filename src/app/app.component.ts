@@ -7,6 +7,7 @@ import { User } from './user';
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
+
 export class AppComponent implements OnInit{
   title = 'fingersprint_Virdi';
   user?: User;
@@ -14,7 +15,9 @@ export class AppComponent implements OnInit{
 
   public messages: User[] = [];
 
-  constructor(private webSocketService: WebSocketService) { }
+  constructor(
+    private webSocketService: WebSocketService
+    ) { }
 
   ngOnInit(): void {
     this.webSocketService.connect().subscribe(
@@ -25,6 +28,7 @@ export class AppComponent implements OnInit{
           var xx = JSON.parse(this.user?.body)
           this.imageBase64 = xx.imageData;
           console.log("Conecto : "+ JSON.stringify(this.user) );
+
         }else{
           console.log("Conecto : "+ message );
         }
@@ -37,8 +41,18 @@ export class AppComponent implements OnInit{
     );
   }
 
+  //API
+  //POST
+  postHuella(){
+      this.webSocketService.postHuella(this.imageBase64).subscribe((res) =>{
+        console.log(res + " completo");
+      })
+
+  }
+
+  //Web socket
   //fingerindes numero de dedo
   sendMessage(numDedo: string): void {
-    this.webSocketService.sendMessage('{"msgId":"2000","body":{"UserId":"","ImageType":"JPG","BrandType":"VIRDI","FingerIndex":'+numDedo+',"TemplateFormat":3}}');
+    this.webSocketService.sendMessage(`{"msgId":"2000","body":{"UserId":"","ImageType":"JPG","BrandType":"VIRDI","FingerIndex":${numDedo},"TemplateFormat":3}}`);
   }
 }
