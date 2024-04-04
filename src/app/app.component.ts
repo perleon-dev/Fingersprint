@@ -44,7 +44,13 @@ export class AppComponent implements OnInit{
   //API
   //POST
   postHuella(){
-      this.webSocketService.postHuella(this.imageBase64).subscribe((res) =>{
+    var paramx = JSON.parse(`{
+      "id": "string",
+      "imageBase64": "${this.imageBase64}"
+    }`);
+
+
+      this.webSocketService.postHuella(paramx).subscribe((res) =>{
         console.log(res + " completo");
       })
 

@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 
-const BASIC_URL = "https://localhost:7268/Fingerprint";
+const BASIC_URL = " http://localhost:5268/Fingerprint";
 
 @Injectable({
   providedIn: 'root'
